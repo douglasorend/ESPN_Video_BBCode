@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:ESPN</id>
+<name>ESPN Video BBCode</name>
+<version>1.6</version>
+	
+<file name="$languagedir/index.spanish_latin.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['espn_default_width'] = 'Ancho predeterminado utilizado para ESPN bbcode cuando no se especifica<div class="smalltext">NOTA: Colocar <strong>0</strong> para usar una pantalla de video adaptativo. Debe establecer ambos.</div>';
+$txt['espn_default_height'] = 'Altura predeterminada utilizada para ESPN bbcode cuando no se especifica<div class="smalltext">NOTA: Colocar <strong>0</strong> para usar una pantalla de video adaptativo. Debe establecer ambos.</div>';
+$txt['espn_invalid'] = '[ Enlace ESPN no v&aacute;lido ]';
+]]></add>
+	</operation>
+</file>
+
+<file name="$languagedir/index.spanish_latin-utf8.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['espn_default_width'] = 'Ancho predeterminado utilizado para ESPN bbcode cuando no se especifica<div class="smalltext">NOTA: Colocar <strong>0</strong> para usar una pantalla de video adaptativo. Debe establecer ambos.</div>';
+$txt['espn_default_height'] = 'Altura predeterminada utilizada para ESPN bbcode cuando no se especifica<div class="smalltext">NOTA: Colocar <strong>0</strong> para usar una pantalla de video adaptativo. Debe establecer ambos.</div>';
+$txt['espn_invalid'] = '[ Enlace ESPN no válido ]';
+]]></add>
+	</operation>
+</file>
+</modification>
