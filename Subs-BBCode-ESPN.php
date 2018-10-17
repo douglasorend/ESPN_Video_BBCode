@@ -20,10 +20,11 @@ function BBCode_ESPN(&$bbc)
 		'type' => 'unparsed_content',
 		'parameters' => array(
 			'width' => array('match' => '(\d+)'),
-			'height' => array('match' => '(\d+)'),
+			'height' => array('optional' => true, 'match' => '(\d+)'),
+			'frameborder' => array('optional' => true, 'match' => '(\d+)'),
 		),
 		'validate' => 'BBCode_ESPN_Validate',
-		'content' => '{width}|{height}',
+		'content' => '{width}|{height}|{frameborder}',
 		'disabled_content' => '$1',
 	);
 
@@ -32,7 +33,7 @@ function BBCode_ESPN(&$bbc)
 		'tag' => 'espn',
 		'type' => 'unparsed_content',
 		'validate' => 'BBCode_ESPN_Validate',
-		'content' => '576|324',
+		'content' => '0|0|0',
 		'disabled_content' => '$1',
 	);
 }
@@ -50,14 +51,44 @@ function BBCode_ESPN_Button(&$buttons)
 
 function BBCode_ESPN_Validate(&$tag, &$data, &$disabled)
 {
-	global $txt;
+	global $context, $modSettings, $txt;
 	
 	if (empty($data))
 		return ($tag['content'] = $txt['espn_invalid']);
-	list($width, $height, $id) = explode('|', $tag['content'] . '|' . ((int) $data));
-	if (preg_match('#(http|https):\/\/espn\.go.com/video/clip\?id=(|espn:)(\d+)#i', $data, $parts))
-		$id = $parts[3];
-	$tag['content'] = (empty($id) ? $txt['espn_invalid'] : '<script src="http://player.espn.com/player.js?playerBrandingId=4ef8000cbaf34c1687a7d9a26fe0e89e&adSetCode=91cDU6NuXTGKz3OdjOxFdAgJVtQcKJnI&pcode=1kNG061cgaoolOncv54OAO1ceO-I&width=' . $width .'&height=' . $height . '&externalId=espn:' . $id . '&thruParam_espn-ui[autoPlay]=false&thruParam_espn-ui[playRelatedExternally]=true"></script>');
+	list($width, $height, $frameborder) = explode('|', $tag['content']);
+	if (empty($width) && !empty($modSettings['espn_default_width']))
+		$width = $modSettings['espn_default_width'];
+	if (empty($height) && !empty($modSettings['espn_default_height']))
+		$height = $modSettings['espn_default_height'];
+	$data = strtr(trim($data), array('<br />' => ''));
+	if (strpos($data, 'http://') !== 0 && strpos($data, 'https://') !== 0)
+		$data = 'http://' . $data;
+	if (!preg_match('#(http|https):\/\/(video\.espn\.com|espn\.go.com)/video/clip\?id=(|espn:)(\d+)#i', $data, $parts))
+		return ($tag['content'] = $txt['espn_invalid']);
+	$md5 = md5($data);
+	if (($results = cache_get_data('espn_' . $md5, 86400)) == null)
+	{
+		$content = file_get_contents($data);
+		$pattern = '#meta name="twitter:player" content="(.+?)"#i' . ($context['utf8'] ? 'u' : '');
+		preg_match($pattern, $content, $codes);
+		$results = (isset($codes[1]) ? $codes[1] : '');
+		cache_put_data('espn_' . $md5, $results, 86400);
+	}
+	$tag['content'] = '<div' . ((empty($width) || empty($height)) ? '' : ' style="max-width: ' . $width . 'px; max-height: ' . $height . 'px;"') . '><div class="espn-wrapper"><iframe class="espn-player" type="text/html" src="' . $results .'" allowfullscreen frameborder="' . $frameborder . '"></iframe></div></div>';
+}
+
+function BBCode_ESPN_Settings(&$config_vars)
+{
+	$config_vars[] = array('int', 'espn_default_width');
+	$config_vars[] = array('int', 'espn_default_height');
+}
+
+function BBCode_ESPN_Theme()
+{
+	global $context, $settings;
+	$context['html_headers'] .= '
+	<link rel="stylesheet" type="text/css" href="' . $settings['default_theme_url'] . '/css/BBCode-ESPN.css" />';
+	$context['allowed_html_tags'][] = '<iframe>';
 }
 
 function BBCode_ESPN_Embed(&$message)

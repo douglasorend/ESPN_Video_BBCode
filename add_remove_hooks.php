@@ -21,8 +21,10 @@ if (SMF == 'SSI')
 // Define the hooks
 $hook_functions = array(
 	'integrate_pre_include' => '$sourcedir/Subs-BBCode-ESPN.php',
+	'integrate_load_theme' => 'BBCode_ESPN_Theme',
 	'integrate_bbc_codes' => 'BBCode_ESPN',
 	'integrate_bbc_buttons' => 'BBCode_ESPN_Button',
+	'integrate_general_mod_settings' => 'BBCode_ESPN_Settings',
 );
 
 // Adding or removing them?

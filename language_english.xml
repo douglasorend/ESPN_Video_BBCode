@@ -2,13 +2,15 @@
 <!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
 <modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
 <id>Dougiefresh:ESPN</id>
-<name>Embed ESPN BBCode</name>
-<version>1.2</version>
-
+<name>ESPN Video BBCode</name>
+<version>1.3</version>
+	
 <file name="$languagedir/index.english.php">
 	<operation>
 		<search position="end" />
 		<add><![CDATA[
+$txt['espn_default_width'] = 'Default width used for ESPN bbcode when not specified<div class="smalltext">Use <strong>0</strong> to use responsive video display.  Must set both.</div>';
+$txt['espn_default_height'] = 'Default height used for ESPN bbcode when not specified<div class="smalltext">Use <strong>0</strong> to use responsive video display.  Must set both.</div>';
 $txt['espn_invalid'] = '[ Invalid ESPN URL ]';
 ]]></add>
 	</operation>

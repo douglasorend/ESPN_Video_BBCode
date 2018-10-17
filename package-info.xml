@@ -5,37 +5,41 @@
 	<id>Dougiefresh:ESPN</id>
 	<name>ESPN Video BBCode</name>
 	<type>modification</type>
-	<version>1.2</version>
+	<version>1.3</version>
 
 	<install for="2.0 - 2.0.99">
 		<readme parsebbc="true">readme.txt</readme>
 		<code>add_remove_hooks.php</code>
-		<modification>install.xml</modification>
+		<modification>install_20x.xml</modification>
 		<modification>language_english.xml</modification>
 		<require-file name="Subs-BBCode-ESPN.php" destination="$sourcedir" />
+		<require-file name="BBCode-ESPN.css" destination="$themedir/css" />
 		<require-file name="espn.gif" destination="$imagesdir/bbc" />
 	</install>
 	<uninstall for="2.0 - 2.0.99">
 		<code>add_remove_hooks.php</code>
-		<modification reverse="true">install.xml</modification>
+		<modification reverse="true">install_20x.xml</modification>
 		<modification reverse="true">language_english.xml</modification>
 		<remove-file name="$sourcedir/Subs-BBCode-ESPN.php" />		
+		<remove-file name="$themedir/css/BBCode-ESPN.css" />
 		<remove-file name="$imagesdir/bbc/espn.gif" />
 	</uninstall>
 
-	<install for="2.1 Beta 1">
+	<install for="2.1 Beta 2">
 		<readme parsebbc="true">readme.txt</readme>
 		<code>add_remove_hooks.php</code>
-		<modification>install.xml</modification>
+		<modification>install_21x.xml</modification>
 		<modification>language_english.xml</modification>
 		<require-file name="Subs-BBCode-ESPN.php" destination="$sourcedir" />
+		<require-file name="BBCode-ESPN.css" destination="$themedir/css" />
 		<require-file name="espn.png" destination="$imagesdir/bbc" />
 	</install>
-	<uninstall for="2.1 Beta 1">
+	<uninstall for="2.1 Beta 2">
 		<code>add_remove_hooks.php</code>
-		<modification reverse="true">install.xml</modification>
+		<modification reverse="true">install_21x.xml</modification>
 		<modification reverse="true">language_english.xml</modification>
 		<remove-file name="$sourcedir/Subs-BBCode-ESPN.php" />		
+		<remove-file name="$themedir/css/BBCode-ESPN.css" />
 		<remove-file name="$imagesdir/bbc/espn.png" />
 	</uninstall>
 </package-info>
