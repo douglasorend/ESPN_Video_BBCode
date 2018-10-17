@@ -1,3 +1,9 @@
+v1.2 - October 2nd, 2015
+o Modified validation function to check to make sure URL is actually a NHL video URL.
+o Added "Invalid ESPN URL" message for use with invalid ESPN URLs (duh)....
+o Added ability to auto-embed ESPN URLs to the mod.
+o Added code to remove auto-embedded NHL videos from within code tags.
+
 v1.1 - July 1st, 2015
 o Modified to show nothing if no URL is specified between the opening & closing tag.
 
