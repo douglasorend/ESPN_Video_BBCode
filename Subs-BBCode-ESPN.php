@@ -93,8 +93,11 @@ function BBCode_ESPN_Theme()
 
 function BBCode_ESPN_Embed(&$message, &$smileys, &$cache_id, &$parse_tags)
 {
+	$replace = (strpos($cache_id, 'sig') !== false ? '[url]$0[/url]' : '[espn]$0[/espn]');
 	$pattern = '~(?<=[\s>\.(;\'"]|^)(?:https?\:\/\/)(video\.espn\.com|espn\.go.com)/video/clip\?id=(|espn:)(\d+)+\??[/\w\-_\~%@\?;=#}\\\\]?~';
-	$message = preg_replace($pattern, '[espn]$0[/espn]', $message);
+	$message = preg_replace($pattern, $replace, $message);
+	if (strpos($cache_id, 'sig') !== false)
+		$message = preg_replace('#\[espn.*\](.*)\[\/espn\]#i', '[url]$1[/url]', $message);
 }
 
 ?>
