@@ -1,5 +1,5 @@
 [hr]
-[center][color=red][size=16pt][b]ESPN VIDEO BBCODE v1.3[/b][/size][/color]
+[center][color=red][size=16pt][b]ESPN VIDEO BBCODE v1.4[/b][/size][/color]
 [url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=4057]Link to Mod[/url]
 [/center]
 [hr]
@@ -19,7 +19,7 @@ The two BBCodes takes these forms:
 where [b]{ESPN embed code}[/b] is the embed code given from the ESPN.com website, and [b]{ESPN video ID}[/b] is the number that starts with [b]externalId=espn:[/b].
 
 [color=blue][b][size=12pt][u]Admin Settings[/u][/size][/b][/color]
-There are no admin settings to this mod.  To disable, you must uninstall this mod.
+The default width and height parameters can be specified in the [b]Admin[/b] -> [b]Configuration[/b] -> [b]Modification Settings[/b] area.
 
 [color=blue][b][size=12pt][u]Compatibility Notes[/u][/size][/b][/color]
 This mod was tested on SMF 2.0.9, but should work on SMF 2.1 Beta 1, as well as SMF 2.0 and up.  SMF 1.x is not and will not be supported.

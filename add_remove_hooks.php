@@ -25,6 +25,8 @@ $hook_functions = array(
 	'integrate_bbc_codes' => 'BBCode_ESPN',
 	'integrate_bbc_buttons' => 'BBCode_ESPN_Button',
 	'integrate_general_mod_settings' => 'BBCode_ESPN_Settings',
+// SMF 2.1+ Hooks below this line:
+	'integrate_pre_parsebbc' => 'BBCode_ESPN_Embed',
 );
 
 // Adding or removing them?

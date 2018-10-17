@@ -91,14 +91,10 @@ function BBCode_ESPN_Theme()
 	$context['allowed_html_tags'][] = '<iframe>';
 }
 
-function BBCode_ESPN_Embed(&$message)
+function BBCode_ESPN_Embed(&$message, &$smileys, &$cache_id, &$parse_tags)
 {
-	$pattern = '#(|\[espn(|.+?)\](([<br />]+)?))(http|https):\/\/(video\.espn\.com|espn\.go.com)/video/clip\?id=(|espn:)(\d+)(([<br />]+)?)(\[/espn\]|)#i';
-	$message = preg_replace($pattern, '[espn$2]$5://$6/video/clip?id=$8[/espn]', $message);
-	$pattern = '#(|\[espn(|.+?)\](([&lt;br /&gt;]+)?))&lt;script src=&quot;(http|https):\/\/player\.espn\.com/player\.js\?(.+?&amp;|)externalId=espn:(\d+)(|&amp;.+?)&quot;&gt;&lt;/script&gt;(([&lt;br /&gt;]+)?)(\[/espn\]|)#i';
-	$message = preg_replace($pattern, '[espn$2]$5://espn.go.com/video/clip?id=$7[/espn]', $message);
-	$pattern = '#\[code(|(.+?))\](|.+?)\[espn(|.+?)\](.+?)\[/espn\](|.+?)\[/code\]#i';
-	$message = preg_replace($pattern, '[code$1]$3$5$6[/code]', $message);
+	$pattern = '~(?<=[\s>\.(;\'"]|^)(?:https?\:\/\/)(video\.espn\.com|espn\.go.com)/video/clip\?id=(|espn:)(\d+)+\??[/\w\-_\~%@\?;=#}\\\\]?~';
+	$message = preg_replace($pattern, '[espn]$0[/espn]', $message);
 }
 
 ?>
