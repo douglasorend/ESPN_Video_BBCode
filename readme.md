@@ -1,36 +1,39 @@
-[hr]
-[center][color=red][size=16pt][b]ESPN VIDEO BBCODE v1.9[/b][/size][/color]
-[url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=4057]Link to Mod[/url]
-[/center]
-[hr]
+--------
 
-[color=blue][b][size=12pt][u]Introduction[/u][/size][/b][/color]
+# ESPN VIDEO BBCODE v1.9
+
+[**By Dougiefresh**](http://www.simplemachines.org/community/index.php?action=profile;u=253913) -> [Link to Mod](http://custom.simplemachines.org/mods/index.php?mod=4057)
+
+--------
+
+## Introduction
 This modification adds a BBCodes to watch ESPN videos.
 
 The two BBCodes takes these forms:
-[code]
-[ESPN]{ESPN video ID}[/ESPN]
-[ESPN width=x height=x]{ESPN video ID}[/ESPN]
-[ESPN]{ESPN video URL}[/ESPN]
-[ESPN width=x height=x]{ESPN video URL}[/ESPN]
-[ESPN]{ESPN embed code}[/ESPN]
-[ESPN width=x height=x]{ESPN embed code}[/ESPN]
-[/code]
-where [b]{ESPN embed code}[/b] is the embed code given from the ESPN.com website, and [b]{ESPN video ID}[/b] is the number that starts with [b]externalId=espn:[/b].
+    
+    [ESPN]{ESPN video ID}[/ESPN]
+    [ESPN width=x height=x]{ESPN video ID}[/ESPN]
+    [ESPN]{ESPN video URL}[/ESPN]
+    [ESPN width=x height=x]{ESPN video URL}[/ESPN]
+    [ESPN]{ESPN embed code}[/ESPN]
+    [ESPN width=x height=x]{ESPN embed code}[/ESPN]
+    
+where **{ESPN embed code}** is the embed code given from the ESPN.com website, and **{ESPN video ID}** is the number that starts with **externalId=espn:**.
 
-[color=blue][b][size=12pt][u]Admin Settings[/u][/size][/b][/color]
-The default width and height parameters can be specified in the [b]Admin[/b] -> [b]Configuration[/b] -> [b]Modification Settings[/b] area.
+## Admin Settings
+The default width and height parameters can be specified in the **Admin** -> **Configuration** -> **Modification Settings** area.
 
-[color=blue][b][size=12pt][u]Compatibility Notes[/u][/size][/b][/color]
+## Compatibility Notes
 This mod was tested on SMF 2.0.9, but should work on SMF 2.1 Beta 1, as well as SMF 2.0 and up.  SMF 1.x is not and will not be supported.
 
-This mod should be installed after [url=https://www.tapatalk.com/download_SimpleMachines.php]Tapatalk mod[/url], if you want to use it with Tapatalk.
+This mod should be installed after [Tapatalk mod](https://www.tapatalk.com/download_SimpleMachines.php), if you want to use it with Tapatalk.
 
-[color=blue][b][size=12pt][u]Changelog[/u][/size][/b][/color]
-The changelog can be viewed at [url=http://www.xptsp.com/board/free-modifications/espn-video-bbcode/?tab=1]XPtsp.com[/url].
+## Changelog
+The changelog can be viewed at [XPtsp.com](http://www.xptsp.com/board/free-modifications/espn-video-bbcode/?tab=1).
 
-[color=blue][b][size=12pt][u]License[/u][/size][/b][/color]
+## License
 Copyright (c) 2015 - 2018, Douglas Orend
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
