@@ -3,9 +3,9 @@
 * Subs-BBCode-ESPN.php
 ***********************************************************************************
 ***********************************************************************************
-* This program is distributed in the hope that it is and will be useful, but      *
-* WITHOUT ANY WARRANTIES; without even any implied warranty of MERCHANTABILITY    *
-* or FITNESS FOR A PARTICULAR PURPOSE.                                            *
+* This program is distributed in the hope that it is and will be useful, but	  *
+* WITHOUT ANY WARRANTIES; without even any implied warranty of MERCHANTABILITY	  *
+* or FITNESS FOR A PARTICULAR PURPOSE.											  *
 **********************************************************************************/
 
 function BBCode_ESPN(&$bbc)
@@ -47,7 +47,7 @@ function BBCode_ESPN_Button(&$buttons)
 function BBCode_ESPN_Validate(&$tag, &$data, &$disabled)
 {
 	parse_str(parse_url(str_replace('&amp;', '&', $data), PHP_URL_QUERY), $out);
-	$data = (isset($out['externalId']) ? str_replace('espn:', '', $out['externalId']) : (int) $data);
+	$data = (isset($out['id']) ? $out['id'] : ((isset($out['externalId']) ? str_replace('espn:', '', $out['externalId']) : (int) $data)));
 }
 
 ?>

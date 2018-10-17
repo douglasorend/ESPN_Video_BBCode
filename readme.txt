@@ -1,6 +1,6 @@
 [hr]
-[center][color=red][size=16pt][b]ESPN VIDEO BBCODE v1.0[/b][/size][/color]
-[url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=4053]Link to Mod[/url]
+[center][color=red][size=16pt][b]ESPN VIDEO BBCODE v1.0.2[/b][/size][/color]
+[url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=4057]Link to Mod[/url]
 [/center]
 [hr]
 
@@ -11,6 +11,8 @@ The two BBCodes takes these forms:
 [code]
 [ESPN]{ESPN video ID}[/ESPN]
 [ESPN width=x height=x]{ESPN video ID}[/ESPN]
+[ESPN]{ESPN video URL}[/ESPN]
+[ESPN width=x height=x]{ESPN video URL}[/ESPN]
 [ESPN]{ESPN embed code}[/ESPN]
 [ESPN width=x height=x]{ESPN embed code}[/ESPN]
 [/code]
